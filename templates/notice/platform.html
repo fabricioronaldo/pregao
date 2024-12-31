@@ -1,0 +1,31 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+
+<h1>Plataformas</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Código</th>
+      <th scope="col">Paltaforma</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% if platforms %}
+      {% for platform in platforms %}
+        <tr>
+          <th scope="row">{{platform.id}}</th>
+          <td>{{platform.name}}</td>
+          <td>
+            <a href="{% url 'platform_update' pk=platform.pk %}" class="btn btn-outline-primary" role="button" aria-disabled="true">Editar</a>
+            <a class="btn btn-outline-danger" role="button" aria-disabled="true">Excluir</a>
+          </td>
+        </tr>
+      {% endfor %}
+    {% else %}
+      <p>Plataforma não encontrada</p>
+    {% endif %}      
+  </tbody>
+</table>
+
+{% endblock %}
