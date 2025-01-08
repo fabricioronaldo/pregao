@@ -1,0 +1,14 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+
+<h1 class="border-bottom">Deletar Status</h1>
+
+<p>Tem certeza que deseja deletar o Status <strong>{{status.name}}</strong> ?</p>
+  <form method="post">
+  {% csrf_token %}
+    <button type="submit" class="btn btn-outline-primary mt-2">Deletar Plataforma</button>
+    <a href="{% url 'status' %}" class="btn btn-outline-success mt-2">Cancelar</a>
+  </form>
+
+{% endblock  %}

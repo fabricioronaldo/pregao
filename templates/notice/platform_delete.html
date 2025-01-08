@@ -1,0 +1,14 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+
+<h1 class="border-bottom">Deletar Plataforma</h1>
+
+<p>Tem certeza que deseja deletar a Plataforma <strong>{{platform.name}}</strong> ?</p>
+  <form method="post">
+  {% csrf_token %}
+    <button type="submit" class="btn btn-secondary">Deletar Plataforma</button>
+    <button onclick="" class="btn btn-primary">Cancelar</button>
+  </form>
+
+{% endblock  %}

@@ -18,7 +18,7 @@
           <td>{{platform.name}}</td>
           <td>
             <a href="{% url 'platform_update' pk=platform.pk %}" class="btn btn-outline-primary" role="button" aria-disabled="true">Editar</a>
-            <a class="btn btn-outline-danger" role="button" aria-disabled="true">Excluir</a>
+            <a href="{% url 'platform_delete' pk=platform.pk %}" class="btn btn-outline-danger" role="button" aria-disabled="true">Excluir</a>
           </td>
         </tr>
       {% endfor %}
